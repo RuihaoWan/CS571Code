@@ -1,4 +1,37 @@
-<LINK media="print" title="The manual in postscript
-type="application/postscript"
-rel="alternate
-href="http://domain/manual/usermanual.ps">
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style> 
+        body,html{ height: 100%; }
+        *{ margin: 0; padding: 0; }
+        .fixedBg{ 
+            min-height: 500px;
+            background-image: url("bg.jpg"); 
+            background-position: center center; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed;
+            background-size: cover; 
+        }
+        .testBefore,.testAfter{
+            background: #333;
+            width: 100%;
+            height: 300px;
+            text-align: center;
+        }
+        h1{
+            color: #fff;
+            font-size: 100px;
+            line-height: 300px;
+        }
+</style> 
+</head>
+<body>
+<div class="testBefore"><h1>BEFORE</h1></div>
+<div class="fixedBg"></div>
+<div class="testAfter"><h1>AFTER</h1></div>
+</body>
+</html>

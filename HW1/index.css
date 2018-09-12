@@ -1,0 +1,271 @@
+/*
+* @Author: vanri
+* @Date:   2018-09-07 18:04:46
+* @Last Modified by:   ruihao
+* @Last Modified time: 2018-09-11 20:48:53
+*/
+.Head{
+	height: 106px;
+	background-color: #fff;
+}
+.Head .menu{
+	font-size: 12px;
+	float: left;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 80px;
+	margin-left: 40px; 
+	height: 80px;
+	color: rgba(30,30,30,1);
+}
+.Head .navBar{
+	font-size: 10px;
+	float: right;
+	height: 80px;
+	text-align: center;
+	line-height: 80px;
+	vertical-align: middle;
+	margin-right: 40px
+}
+
+.Head .navBar a{
+	color: rgba(30,30,30,0.5);
+	text-decoration: none;
+	margin-left: 10px; 
+}
+.Head .navBar a:hover{
+	color: rgba(30,30,30,1);
+}
+
+.Head .navBar a:active{
+	color: rgba(30,30,30,1);
+}
+
+.Head .navBar a:visit{
+	color: rgba(30,30,30,1);
+}
+
+.SignUp{
+	width: 100%;
+	position: relative;
+}
+
+.SignUp .sig{
+	background-color: #0B3C5D;
+	height: 70%;
+	width: 30%;
+	position: absolute;
+	z-index: 2;
+	top:50%;
+	left: 20%;
+	transform: translate(-50%,-50%);
+}
+.SignUp .sig div{
+	margin-left: 10%;
+	width: 80%;
+}
+.SignUp .sig div:first-child{
+	color: white;
+	font-size: 10px;
+	margin-top: 10%;
+}
+.SignUp .sig div:nth-child(2){
+	font-size: 24px;
+	color: white;
+	margin-top: 3%;
+}
+.SignUp .sig div:nth-child(3){
+	color: yellow;
+	margin-top: 5%;
+	font-style: italic;
+	font-size: 14px;
+}
+
+.dot {
+  height: 5px;
+  width: 5px;
+  background-color: #FADD15;
+  border-radius: 50%;
+  display: inline-block;
+} 
+
+.SignUp .sig input{
+	margin-left: 10%;
+	margin-top: 8%;
+	width: 80%;
+}
+.SignUp .sig button{
+	margin-left: 10%;
+	margin-top: 8%;
+	background-color: #FADD15;
+	color: black;
+	border: none;
+	text-align: center;
+	text-decoration: none;
+	font-size: 10px;
+	height: 30px;
+	width: 60%;
+}
+
+.SignUp img{
+	max-width: 100%;
+}
+
+.Feature{
+	width: 100%;
+	background-color: white;
+	height: 380px;
+	position: relative;
+}
+.Feature div{
+	color: rgba(30,30,30,0.5);
+}
+.Feature .left{
+	background-color: white;
+	width: 30%;
+	height: 80%;
+	position: absolute;
+	left: 3%;
+	top: 50%;
+	transform: translate(0,-50%);
+}
+H2{
+	margin-top: 20%;
+	margin-bottom: 10%;
+	color: rgba(30,30,30,1);
+}
+.Feature .middle{
+	background-color: white;
+	width: 30%;
+	height: 80%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+.Feature .right{
+	background-color: white;
+	width: 30%;
+	height: 80%;
+	position: absolute;
+	left: 97%;
+	top: 50%;
+	transform: translate(-100%,-50%);
+}
+
+.Quote{
+	background-color: #F4F4F4;
+	width: 100%;
+	height: 350px; 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column; 
+}
+p{
+	font-size: 12px;
+	color: rgba(30,30,30,0.5);
+	margin-top: 20px;
+}
+.Quote span{
+	font-size: 14px;
+	color: rgba(30,30,30,1);
+}
+
+.Price{
+	width: 100%;
+	height: 780px;
+	position: relative;
+	background-color:rgba(255,255,255,0.3);
+}
+.Price .head{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column; 
+	width: 80%;
+	height: 30%;
+	position: absolute;
+	left: 10%;
+	top: 20%;
+	transform: translate(0,-50%);
+}
+.Price .left{
+	background-color: rgba(255,255,255,1);
+	width: 25%;
+	height: 55%;
+	position: absolute;
+	left: 7%;
+	top: 65%;
+	transform: translate(0,-50%);
+}
+.empty_bg{
+	background:none;
+	float: left;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column; 
+}
+.empty_bg H1{
+	margin-top:20px;
+}
+.empty_bg div{
+	font-size: 12px;
+	margin-top: 20px;
+}
+.grid{
+	width: 100%;
+	height: 100%;
+	background-image: url("img/grid.png"); 
+	background-size: cover;
+	opacity: 0.3;
+	filter: alpha(opacity = 30);
+}
+.Price .middle{
+	background: rgb(255,255,255,1);
+	background-size: cover;
+	width: 25%;
+	height: 55%;
+	position: absolute;
+	left: 50%;
+	top: 65%;
+	transform: translate(-50%,-50%);
+}
+.Price .right{
+	background: rgb(255,255,255,1);
+	background-size: cover;
+	width: 25%;
+	height: 55%;
+	position: absolute;
+	left: 93%;
+	top: 65%;
+	transform: translate(-100%,-50%);
+}
+
+.fixedBg{ 
+    min-height: 780px;
+    background-image: url("img/glasses.png"); 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    background-size: cover; 
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+}
+
+.Try{
+	background-color: rgba(30,30,30,1);
+	width: 100%;
+	height: 300px; 
+}
+
+.Footer{
+	background-color: rgba(190,30,30,1);
+	width: 100%;
+	height: 180px; 
+}
