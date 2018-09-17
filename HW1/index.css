@@ -2,7 +2,7 @@
 * @Author: vanri
 * @Date:   2018-09-07 18:04:46
 * @Last Modified by:   ruihao
-* @Last Modified time: 2018-09-11 20:48:53
+* @Last Modified time: 2018-09-13 15:10:34
 */
 .Head{
 	height: 106px;
@@ -172,10 +172,14 @@ p{
 	color: rgba(30,30,30,1);
 }
 
-.Price{
+.Price_class{
 	width: 100%;
 	height: 780px;
 	position: relative;
+}
+.Price{
+	width: 100%;
+	height: 780px;
 	background-color:rgba(255,255,255,0.3);
 }
 .Price .head{
@@ -190,7 +194,7 @@ p{
 	top: 20%;
 	transform: translate(0,-50%);
 }
-.Price .left{
+.Price_content .left{
 	background-color: rgba(255,255,255,1);
 	width: 25%;
 	height: 55%;
@@ -222,7 +226,7 @@ p{
 	opacity: 0.3;
 	filter: alpha(opacity = 30);
 }
-.Price .middle{
+.Price_content .middle{
 	background: rgb(255,255,255,1);
 	background-size: cover;
 	width: 25%;
@@ -232,7 +236,7 @@ p{
 	top: 65%;
 	transform: translate(-50%,-50%);
 }
-.Price .right{
+.Price_content .right{
 	background: rgb(255,255,255,1);
 	background-size: cover;
 	width: 25%;
@@ -258,14 +262,92 @@ p{
     filter: gray;
 }
 
-.Try{
-	background-color: rgba(30,30,30,1);
+.Price_content .empty_bg H1{
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+.Price_content .empty_bg div:nth-child(6){
+	margin-top: 10%;
+	margin-bottom: 10%;
+	font-size: 22px;
+	text-align: center;
+}
+.Price_content button{
+	background-color: #0B3C5D;
+	color: white;
+	border: none;
+	text-align: center;
+	text-decoration: none;
+	font-size: 10px;
+	height: 30px;
+	width: 60%;
+}
+.Try_class
+{
 	width: 100%;
 	height: 300px; 
+	position: relative;
 }
-
+.Try_bg{
+	min-height: 300px;
+	background-image: url("img/notebook.jpg"); 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+}
+.Try{
+	width: 100%;
+	height: 300px;
+	background-color:rgba(25,63,88,0.3);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.Try H1{
+	color: white;
+}
+.Try p{
+	color: white;
+	margin-bottom: 5%;
+}
+.Try button{
+	background-color: #FADD15;
+	color: black;
+	border: none;
+	text-align: center;
+	text-decoration: none;
+	font-size: 10px;
+	height: 30px;
+	width: 25%;
+}
 .Footer{
-	background-color: rgba(190,30,30,1);
+	background-color: #1D2530;
 	width: 100%;
 	height: 180px; 
+	display: flex;
+	align-items: center;
+	flex-direction:column; 
+}
+.Footer H1{
+	color: white;
+	margin-top: 30px;
+}
+.Footer p{
+	color: white;
+	margin-bottom: 10px;
+}
+.Footer img{
+	width: 30px;
+	height: 30px;
 }

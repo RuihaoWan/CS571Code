@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//----scripting
+		function viewJSON(what){
+			var URL = what.URL.value;
+			var xmlhttp;
+			loadJSON(URL);
+			var hWin;
+			function loadJSON(url) {
+				if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+					xmlhttp=new XMLHttpRequest();
+				} 
+				else {// code for IE6, IE5
+					xmlhttp=new ActiveXObject("Microsoft.XMLHTTP"); 
+				}
+				xmlhttp.onreadystatechange=state_Change;
+  				xmlhttp.open("GET",url,true);
+  				xmlhttp.send(null);
+			}
+
+			function state_Change()
+			{
+				if (xmlhttp.readyState==4)
+ 				 {// 4 = "loaded"
+  					if (xmlhttp.status==200)
+   					 {// 200 = OK
+   				 		jsonObj= JSON.parse(xmlhttp.responseText);
+						//return jsonObj; 
+						//jsonObj = loadJSON(URL);
+						if (window.ActiveXObject) //if IE, simply execute script (due to async prop).
+						{ 
+							if (jsonObj.parseError.errorCode != 0) {
+								var myErr = jsonObj.parseError;
+								generateError(jsonObj);
+								hWin = window.open("", "Error", "height=300,width=340");
+								hWin.document.write(html_text);	
+							}
+							else { 
+								result = generateHTML(jsonObj);
+								if(result == 0){
+									hWin = window.open("", "Assignment4", "height=800,width=600");
+									hWin.document.write(html_text); }
+								}		
+						}
+						else //else if FF, execute script once JSON object has loaded
+						{ 
+							jsonObj.onload=generateHTML(jsonObj);
+							if(jsonObj.onload == 0){
+								hWin = window.open("", "Assignment4", "height=800,width=600");
+								hWin.document.write(html_text);
+							}
+						} 
+						if(hWin != undefined)
+							hWin.document.close(); 
+					} 
+  					else
+    				{
+    					alert("Problem retrieving JSON data");
+    				}
+  				}
+  			}
+  		}
+
+			
+			
+
+		function generateHTML(jsonObj){
+			root = jsonObj.DocumentElement;
+			html_text = "<html><head><title>JSON Parse Result</title></head><body>";
+			html_text += "<table border = 2>";
+			rows = jsonObj.Mainline.Table.Row;
+			if(rows == undefined){
+				alert("JSON data lose");
+				return 1;
+			}
+			rowNodeList = rows[0];
+			html_text+="<tbody>";
+			html_text+="<tr>";
+			x=120;y=55;
+			//output the headers
+			var header_keys = Object.keys(rowNodeList);
+			for(i=0;i<header_keys.length;i++){
+				header = header_keys[i]
+				if(header == "Company") header = "Company";
+				if(header == "Ships") header = "Number of Ships";
+				if(header == "Hubs") header = "HQ/Info";
+				if(header == "Market") header = "Market share";
+				html_text += "<th>" +header+"</th>";
+			}
+			html_text+="</tr>";
+			//output the values
+			for(i=0;i<rows.length;i++){
+				rowNodeList = rows[i];
+				html_text += "<tr>";
+				var item_keys = Object.keys(rowNodeList);
+				for(j=0;j<item_keys.length;j++){
+					prop = item_keys[j];
+					if(rowNodeList[prop] == null){
+						html_text += "<td>" + "</td>"; //test case:763
+					}
+					else if(item_keys[j] == "Hubs"){
+						html_text += "<td><ul><li><b>" + rowNodeList[prop].Hub[0] + "</b></li><li>"+ rowNodeList[prop].Hub[1] + "</li></ul></td>";
+					}
+					else if(item_keys[j] == "HomePage"){
+						html_text += "<td>" + "<a href = " + rowNodeList[prop] + ">" + rowNodeList[prop] + "</a>" + "</td>";
+					}
+					else if(item_keys[j] == "Logo"){
+						html_text+="<td><img src='"+ rowNodeList[prop] +"' width='"+x+"' height='"+y+"'></td>";
+					}
+					else{
+						html_text += "<td>" + rowNodeList[prop] + "</td>";
+					}
+				}
+				html_text+="</tr>"
+			}
+			html_text+="</tbody>";
+			html_text += "</table></body></html>";
+			return 0;
+		}
+	</script>
+</head>
+<body>
+	<div class = 'content' style="text-align: center;">
+		<H1>Enter URL for Container Shipping Companies List JSON File</H1>
+		<form name="myform" method="POST" id="location">
+			<input type="text" name="URL" maxlength="255"
+			size="100" value="containerlist.json" />
+			<br />
+			<input type="button" name="submit" value="Submit
+			Query" onClick="viewJSON(this.form)" />
+		</form>
+	</div>
+</body>
+</html>
